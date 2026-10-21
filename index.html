@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qual monstro você é?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-emojis" aria-hidden="true">
+    <span>🎃</span><span>🦇</span><span>👻</span><span>🕸️</span><span>🦇</span><span>🎃</span>
+  </div>
+
+  <main class="card">
+    <!-- Tela inicial -->
+    <section id="tela-inicio" class="tela ativa">
+      <div class="emoji-grande">🎃</div>
+      <h1 id="titulo">Qual monstro você é?</h1>
+      <p class="sub">Responda 6 perguntas e descubra qual criatura da noite mora dentro de você.</p>
+      <button id="btn-comecar" class="btn">Começar</button>
+    </section>
+
+    <!-- Tela das perguntas -->
+    <section id="tela-quiz" class="tela">
+      <div class="progresso" aria-hidden="true"><div id="barra"></div></div>
+      <p id="contador" class="contador"></p>
+      <h2 id="pergunta"></h2>
+      <div id="opcoes" class="opcoes"></div>
+    </section>
+
+    <!-- Tela do resultado -->
+    <section id="tela-resultado" class="tela">
+      <p class="sub">Você é...</p>
+      <div id="res-emoji" class="emoji-grande"></div>
+      <h2 id="res-nome"></h2>
+      <p id="res-desc" class="sub"></p>
+      <div id="res-barras" class="barras"></div>
+      <div class="acoes">
+        <button id="btn-compartilhar" class="btn">Compartilhar</button>
+        <button id="btn-refazer" class="btn btn-sec">Refazer</button>
+      </div>
+      <p id="aviso" class="aviso" role="status"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

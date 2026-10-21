@@ -1,0 +1,85 @@
+{
+  "titulo": "Qual monstro você é?",
+  "monstros": {
+    "vampiro": {
+      "nome": "Vampiro",
+      "emoji": "🧛",
+      "cor": "#e11d48",
+      "descricao": "Elegante, misterioso e um pouco dramático. Você prefere a noite, tem um estilo impecável e todo mundo sente que você esconde algum segredo antigo."
+    },
+    "fantasma": {
+      "nome": "Fantasma",
+      "emoji": "👻",
+      "cor": "#a5b4fc",
+      "descricao": "Tranquilo, observador e meio fora do tempo. Você aparece quando menos esperam, adora um silêncio e tem uma energia que acalma (ou assusta) quem está por perto."
+    },
+    "lobisomem": {
+      "nome": "Lobisomem",
+      "emoji": "🐺",
+      "cor": "#f59e0b",
+      "descricao": "Intenso, leal e cheio de energia. Você é a alma do grupo, muda de humor com a lua cheia e protege quem gosta com unhas e dentes."
+    },
+    "bruxa": {
+      "nome": "Bruxa / Bruxo",
+      "emoji": "🧙",
+      "cor": "#a855f7",
+      "descricao": "Criativo, esperto e cheio de truques. Você sempre tem uma solução (ou uma poção) para tudo e adora transformar o comum em algo mágico."
+    }
+  },
+  "perguntas": [
+    {
+      "texto": "Qual é o seu horário favorito do dia?",
+      "opcoes": [
+        { "texto": "Meia-noite, quando tudo fica quieto", "pontos": { "vampiro": 2, "fantasma": 1 } },
+        { "texto": "Pôr do sol, aquela hora dourada", "pontos": { "lobisomem": 2, "bruxa": 1 } },
+        { "texto": "Madrugada, enquanto ninguém vê", "pontos": { "fantasma": 2, "bruxa": 1 } },
+        { "texto": "Qualquer um, desde que tenha aventura", "pontos": { "lobisomem": 2, "vampiro": 1 } }
+      ]
+    },
+    {
+      "texto": "Num fim de semana livre, você está...",
+      "opcoes": [
+        { "texto": "Lendo ou assistindo algo em casa", "pontos": { "fantasma": 2, "bruxa": 1 } },
+        { "texto": "Numa festa, com a música alta", "pontos": { "vampiro": 2, "lobisomem": 1 } },
+        { "texto": "Ao ar livre, correndo ou em trilha", "pontos": { "lobisomem": 2 } },
+        { "texto": "Criando ou testando uma ideia maluca", "pontos": { "bruxa": 2, "fantasma": 1 } }
+      ]
+    },
+    {
+      "texto": "Como seus amigos descreveriam você?",
+      "opcoes": [
+        { "texto": "Charmoso(a) e misterioso(a)", "pontos": { "vampiro": 2 } },
+        { "texto": "Calmo(a) e meio invisível", "pontos": { "fantasma": 2 } },
+        { "texto": "Leal e explosivo(a)", "pontos": { "lobisomem": 2 } },
+        { "texto": "Esperto(a) e cheio(a) de truques", "pontos": { "bruxa": 2 } }
+      ]
+    },
+    {
+      "texto": "Qual desses lugares você escolheria para morar?",
+      "opcoes": [
+        { "texto": "Um castelo antigo e sombrio", "pontos": { "vampiro": 2, "fantasma": 1 } },
+        { "texto": "Uma cabana na floresta", "pontos": { "lobisomem": 2, "bruxa": 1 } },
+        { "texto": "Uma casa cheia de livros e ervas", "pontos": { "bruxa": 2 } },
+        { "texto": "Um sótão silencioso e vazio", "pontos": { "fantasma": 2 } }
+      ]
+    },
+    {
+      "texto": "Qual é o seu maior talento?",
+      "opcoes": [
+        { "texto": "Convencer qualquer pessoa", "pontos": { "vampiro": 2, "bruxa": 1 } },
+        { "texto": "Ficar quieto e perceber tudo", "pontos": { "fantasma": 2 } },
+        { "texto": "Ter energia de sobra", "pontos": { "lobisomem": 2 } },
+        { "texto": "Inventar soluções criativas", "pontos": { "bruxa": 2, "fantasma": 1 } }
+      ]
+    },
+    {
+      "texto": "Qual seria seu lanche perfeito?",
+      "opcoes": [
+        { "texto": "Algo vermelho e bem intenso", "pontos": { "vampiro": 2 } },
+        { "texto": "Um churrasco com a galera", "pontos": { "lobisomem": 2 } },
+        { "texto": "Um chá misterioso com biscoitos", "pontos": { "bruxa": 2, "fantasma": 1 } },
+        { "texto": "Qualquer coisa, eu só flutuo mesmo", "pontos": { "fantasma": 2 } }
+      ]
+    }
+  ]
+}
