@@ -1,0 +1,151 @@
+:root {
+  --bg: #0b0714;
+  --card: #151023;
+  --borda: #2a2140;
+  --texto: #f3eefc;
+  --suave: #a79cc0;
+  --laranja: #ff7a1a;
+  --roxo: #8b5cf6;
+  --destaque: var(--laranja);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 20% 10%, #2a1457 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, #4a1d05 0%, transparent 45%),
+    var(--bg);
+  overflow-x: hidden;
+}
+
+/* Emojis flutuando ao fundo */
+.bg-emojis span {
+  position: fixed;
+  font-size: 2.2rem;
+  opacity: 0.12;
+  animation: flutuar 9s ease-in-out infinite;
+  pointer-events: none;
+}
+.bg-emojis span:nth-child(1) { top: 8%;  left: 6%;  animation-delay: 0s; }
+.bg-emojis span:nth-child(2) { top: 20%; right: 8%; animation-delay: 1s; }
+.bg-emojis span:nth-child(3) { bottom: 12%; left: 10%; animation-delay: 2s; }
+.bg-emojis span:nth-child(4) { bottom: 8%; right: 12%; animation-delay: 3s; }
+.bg-emojis span:nth-child(5) { top: 55%; left: 3%; animation-delay: 4s; }
+.bg-emojis span:nth-child(6) { top: 45%; right: 4%; animation-delay: 5s; }
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-18px) rotate(4deg); }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding: 32px 28px;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.18), 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tela { display: none; text-align: center; }
+.tela.ativa { display: block; animation: entrar 0.45s ease; }
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h1 { font-size: 2rem; margin: 10px 0 12px; }
+h2 { font-size: 1.35rem; margin: 8px 0 20px; line-height: 1.35; }
+
+.emoji-grande {
+  font-size: 4.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 18px var(--destaque));
+  animation: pulsar 2.4s ease-in-out infinite;
+}
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+
+.sub { color: var(--suave); line-height: 1.55; margin-bottom: 22px; }
+
+/* Botões */
+.btn {
+  background: linear-gradient(135deg, var(--laranja), #ff4d4d);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 122, 26, 0.35); }
+.btn:focus-visible, .opcao:focus-visible { outline: 2px solid var(--roxo); outline-offset: 3px; }
+.btn-sec { background: transparent; border: 1px solid var(--borda); color: var(--texto); }
+.btn-sec:hover { box-shadow: none; border-color: var(--roxo); }
+
+/* Progresso */
+.progresso {
+  height: 6px;
+  background: var(--borda);
+  border-radius: 99px;
+  overflow: hidden;
+}
+#barra {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--roxo), var(--laranja));
+  transition: width 0.4s ease;
+}
+.contador { color: var(--suave); font-size: 0.85rem; margin-top: 12px; }
+
+/* Opções */
+.opcoes { display: grid; gap: 10px; }
+.opcao {
+  background: #1d1630;
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, background 0.15s;
+}
+.opcao:hover { border-color: var(--laranja); transform: translateX(4px); }
+.opcao.escolhida { background: #2b1d4a; border-color: var(--roxo); }
+
+/* Resultado */
+#res-nome { font-size: 2rem; color: var(--destaque); margin: 12px 0; }
+
+.barras { text-align: left; margin: 8px 0 24px; display: grid; gap: 10px; }
+.barra-linha { font-size: 0.85rem; color: var(--suave); }
+.barra-linha .topo { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.barra-trilho { height: 8px; background: var(--borda); border-radius: 99px; overflow: hidden; }
+.barra-valor { height: 100%; width: 0; border-radius: 99px; transition: width 0.9s ease; }
+
+.acoes { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.aviso { min-height: 1.2em; margin-top: 14px; font-size: 0.85rem; color: var(--suave); }
+
+@media (max-width: 480px) {
+  .card { padding: 24px 18px; }
+  h1 { font-size: 1.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
